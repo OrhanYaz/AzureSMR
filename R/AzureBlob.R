@@ -239,7 +239,7 @@ azureGetBlob <- function(azureActiveContext, blob, directory, type = "text",
   blob <- gsub("^/", "", blob)
   blob <- gsub("^\\./", "", blob)
 
-  URL <- paste0("http://", storageAccount, ".blob.core.windows.net/", container, "/", blob)
+  URL <- paste0("https://", storageAccount, ".blob.core.windows.net/", container, "/", blob)
   r <- callAzureStorageApi(URL, 
     storageKey = storageKey, storageAccount = storageAccount, container = container,
     CMD = paste0("/", blob)
